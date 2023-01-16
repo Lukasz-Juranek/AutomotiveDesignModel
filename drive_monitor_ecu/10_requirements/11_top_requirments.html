@@ -1,0 +1,449 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  
+  <meta charset="UTF-8"/>
+
+  <link rel="shortcut icon" href="../../_static/favicon.ico" type="image/x-icon"/>
+
+  
+  <link rel="stylesheet" href="../../_static/_base.css"/>
+  <link rel="stylesheet" href="../../_static/_layout.css"/>
+  <link rel="stylesheet" href="../../_static/_content.css"/>
+  <link rel="stylesheet" href="../../_static/_requirement.css"/>
+  <link rel="stylesheet" href="../../_static/_element.css"/>
+  <link rel="stylesheet" href="../../_static/_form.css"/>
+  
+
+  
+  <script type="text/javascript" src="../../_static/toc.js"></script>
+  <script type="text/javascript" src="../../_static/jquery.min.js"></script>
+
+  <script type="module">
+      import hotwiredTurbo from "../../_static/turbo.js";
+      import { Application } from "../../_static/stimulus.js";
+      window.Stimulus = Application.start();
+  </script>
+  <script type="module" src="../../_static/std-forms.js"></script>
+  
+  
+  
+
+
+  <title>Top - Document</title>
+
+  
+</head>
+
+<body class="document-view withtoc" data-turbo="false">
+<script>document.body.dataset.state = sessionStorage.getItem('tocState') || 'open';</script><div class="layout" id="layout">
+
+    <aside class="layout_aside-header">
+      
+  <a class="index-link" href="../../index.html">To Index</a>
+
+    </aside>
+
+    <aside class="layout_aside">
+      
+  <turbo-frame id="frame-toc">
+    <div>Table of Contents</div>
+    <ul class="toc"><li><a href="#1-LIN-SPECIFICATION-" data-turbo="false">
+              <span class="section-number">1</span>
+              LIN SPECIFICATION 
+            </a></li><li><a href="#2-CAN-SPECIFICATION" data-turbo="false">
+              <span class="section-number">2</span>
+              CAN SPECIFICATION
+            </a></li></ul>
+</turbo-frame>
+
+    </aside>
+
+    
+  <a class="layout_toggler layout_button" id="layout_toggle"></a><nav class="layout_nav">
+    <a
+    class="layout_nav-btn layout_button btn-document"
+    title="Go to Document view"
+    href="../../drive_monitor_ecu/10_requirements/11_top_requirments.html">
+    DOC
+  </a>
+  <a
+    class="layout_nav-btn layout_button btn-table"
+    title="Go to Table view"
+    href="../../drive_monitor_ecu/10_requirements/11_top_requirments-TABLE.html">
+    TBL
+  </a>
+  <a
+    class="layout_nav-btn layout_button btn-traceability"
+    title="Go to Traceability view"
+    href="../../drive_monitor_ecu/10_requirements/11_top_requirments-TRACE.html">
+    TR
+  </a>
+  <a
+    class="layout_nav-btn layout_button btn-deep-traceability"
+    title="Go to Deep Traceability view"
+    href="../../drive_monitor_ecu/10_requirements/11_top_requirments-DEEP-TRACE.html">
+    DTR
+  </a>
+  </nav>
+
+
+    <header class="layout_header">
+      
+  <p>Top <span class="document-view-type">Document</span></p>
+  <a href="/reqif/export_document/959faea6016c45c59532bbd8c81aa59f">Export to ReqIF</a>
+
+    </header>
+
+    <main class="layout_main">
+      
+  <turbo-frame id="frame_document_content"><div class="content">
+        <turbo-frame id="article-959faea6016c45c59532bbd8c81aa59f">
+<article></article>
+</turbo-frame>
+          <turbo-frame id="article-df66a770581e4a11a14cf27ebd257e97"><article class="docsection" data-controller="document">
+
+  <section data-section="meta" class="docsection_section">
+
+    <div data-role='anchor' id="1-LIN-SPECIFICATION-"></div>
+
+    
+        <h1
+class="section-title"
+data-level="1">
+  1.&nbsp;LIN SPECIFICATION 
+</h1>
+    
+
+  </section>
+
+  </article>
+
+</turbo-frame>
+            <turbo-frame id="article-84eb553b07164ddbaae55ccd6d7c3a7d"><article class="requirement">
+
+  <section class="requirement_section" data-section='meta'>
+
+    <div data-role='anchor' id="-LIN21-Wakeup-Sig1"></div>
+
+    <dl class="requirement_meta">
+    
+    <dt><i>UID</i></dt>
+    <dd>LIN21-Wakeup-Sig1</dd>
+    
+    <dt><i>ASIL</i></dt>
+    <dd>B</dd>
+    
+    <dt><i>CAL</i></dt>
+    <dd>L0</dd>
+    
+    <dt><i>IMPLEMENTATION_TEAM</i></dt>
+    <dd>SW, EE</dd>
+    
+  </dl>
+    
+<ul class="requirement_link">
+  <li>
+    <a data-turbo="false" class="requirement_link-parent" href="../../drive_monitor_ecu/90_configuration/91_releases.html#-RELEASE_1">
+      <span class="requirement_parent-uid">RELEASE_1</span>
+      
+    </a>
+  </li>
+  <li>
+    <a data-turbo="false" class="requirement_link-parent" href="../../drive_monitor_ecu/20_architecture/21_system_architecture.html#2.2-SYSA-INT-LIN1">
+      <span class="requirement_parent-uid">SYSA-INT-LIN1</span>
+      LIN1
+    </a>
+  </li>
+  <li>
+    <a data-turbo="false" class="requirement_link-parent" href="../../drive_monitor_ecu/20_architecture/21_system_architecture.html#2.3-SYSA-INT-APP">
+      <span class="requirement_parent-uid">SYSA-INT-APP</span>
+      APP
+    </a>
+  </li>
+  </ul>
+    
+
+  </section>
+  <section class="requirement_section" data-section='statement'>
+
+    <div class="requirement_statement">
+    <div class="document">
+<div class="line-block">
+<div class="line">Every slave node (connected to power) shall detect the wake up signal (a dominant</div>
+<div class="line">pulse longer than 150 µs) and be ready to listen to bus commands within 100 ms,</div>
+<div class="line">measured from the ending edge of the dominant pulse, see Figure 2.16. A detection</div>
+<div class="line">threshold of 150 µs combined with a 250 µs pulse generation gives a detection margin</div>
+<div class="line">that is enough for uncalibrated slave nodes. If the node that transmitted the wake up</div>
+<div class="line">signal is a slave node, it will be ready to receive or transmit frames immediately. The</div>
+<div class="line">master node shall also wake up and, when the slave nodes are ready, start transmitting headers to find out the cause (using signals) of the wake up.</div>
+</div>
+<img alt="PNG demo" class="image" src="_assets/LIN21-Wakeup-Sig1.png" />
+</div>
+
+  </div>
+
+  </section>
+  <section class="requirement_section" data-section='comment'>
+
+    
+    
+    
+  
+    <div class="requirement_meta_multiline_label">VERIFICATION_METHOD:</div>
+    <div class="requirement_meta_multiline"><div class="document">
+<p>System Black box testing, send wake-up signal and observe behavior</p>
+</div>
+</div>
+
+  </section></article>
+
+</turbo-frame>
+            <turbo-frame id="article-eb92924963ce4375bfa42ed11aebe0d1"><article class="requirement">
+
+  <section class="requirement_section" data-section='meta'>
+
+    <div data-role='anchor' id="-LIN21-Wakeup-Sig2"></div>
+
+    <dl class="requirement_meta">
+    
+    <dt><i>UID</i></dt>
+    <dd>LIN21-Wakeup-Sig2</dd>
+    
+    <dt><i>ASIL</i></dt>
+    <dd>B</dd>
+    
+    <dt><i>CAL</i></dt>
+    <dd>L0</dd>
+    
+    <dt><i>IMPLEMENTATION_TEAM</i></dt>
+    <dd>SW, EE</dd>
+    
+  </dl>
+    
+<ul class="requirement_link">
+  <li>
+    <a data-turbo="false" class="requirement_link-parent" href="../../drive_monitor_ecu/90_configuration/91_releases.html#-RELEASE_1">
+      <span class="requirement_parent-uid">RELEASE_1</span>
+      
+    </a>
+  </li>
+  <li>
+    <a data-turbo="false" class="requirement_link-parent" href="../../drive_monitor_ecu/20_architecture/21_system_architecture.html#2.2-SYSA-INT-LIN1">
+      <span class="requirement_parent-uid">SYSA-INT-LIN1</span>
+      LIN1
+    </a>
+  </li>
+  <li>
+    <a data-turbo="false" class="requirement_link-parent" href="../../drive_monitor_ecu/20_architecture/21_system_architecture.html#2.3-SYSA-INT-APP">
+      <span class="requirement_parent-uid">SYSA-INT-APP</span>
+      APP
+    </a>
+  </li>
+  </ul>
+    
+
+  </section>
+  <section class="requirement_section" data-section='statement'>
+
+    <div class="requirement_statement">
+    <div class="document">
+<p>Time for wake-up signal shall be measured by microcontroller hardware timer</p>
+</div>
+
+  </div>
+
+  </section>
+  <section class="requirement_section" data-section='comment'>
+
+    
+    
+    
+  
+    <div class="requirement_meta_multiline_label">VERIFICATION_METHOD:</div>
+    <div class="requirement_meta_multiline"><div class="document">
+<p>Software Integration testing, LIN Interface should depend on MCU registers (for Timer or Hardware LIN Time measurement)</p>
+</div>
+</div>
+
+  </section></article>
+
+</turbo-frame>
+          <turbo-frame id="article-5a44e5fbc75d4004a6d4d21e4cf31ad8"><article class="docsection" data-controller="document">
+
+  <section data-section="meta" class="docsection_section">
+
+    <div data-role='anchor' id="2-CAN-SPECIFICATION"></div>
+
+    
+        <h1
+class="section-title"
+data-level="2">
+  2.&nbsp;CAN SPECIFICATION
+</h1>
+    
+
+  </section>
+
+  </article>
+
+</turbo-frame>
+            <turbo-frame id="article-5c80c5da56974c48b46ab1ab3a672373"><article class="requirement">
+
+  <section class="requirement_section" data-section='meta'>
+
+    <div data-role='anchor' id="-CAN1-TP"></div>
+
+    <dl class="requirement_meta">
+    
+    <dt><i>UID</i></dt>
+    <dd>CAN1-TP</dd>
+    
+    <dt><i>ASIL</i></dt>
+    <dd>B</dd>
+    
+    <dt><i>CAL</i></dt>
+    <dd>L0</dd>
+    
+    <dt><i>IMPLEMENTATION_TEAM</i></dt>
+    <dd>SW, EE</dd>
+    
+  </dl>
+    
+<ul class="requirement_link">
+  <li>
+    <a data-turbo="false" class="requirement_link-parent" href="../../drive_monitor_ecu/90_configuration/91_releases.html#-RELEASE_1">
+      <span class="requirement_parent-uid">RELEASE_1</span>
+      
+    </a>
+  </li>
+  <li>
+    <a data-turbo="false" class="requirement_link-parent" href="../../drive_monitor_ecu/20_architecture/21_system_architecture.html#2.1-SYSA-INT-CAN1">
+      <span class="requirement_parent-uid">SYSA-INT-CAN1</span>
+      CAN1
+    </a>
+  </li>
+  <li>
+    <a data-turbo="false" class="requirement_link-parent" href="../../drive_monitor_ecu/20_architecture/21_system_architecture.html#2.3-SYSA-INT-APP">
+      <span class="requirement_parent-uid">SYSA-INT-APP</span>
+      APP
+    </a>
+  </li>
+  <li>
+    <a data-turbo="false" class="requirement_link-parent" href="../../drive_monitor_ecu/20_architecture/21_system_architecture.html#2.4-SYSA-INT-BOOTLOADER">
+      <span class="requirement_parent-uid">SYSA-INT-BOOTLOADER</span>
+      BOOTLOADER
+    </a>
+  </li>
+  </ul>
+    
+
+  </section>
+  <section class="requirement_section" data-section='statement'>
+
+    <div class="requirement_statement">
+    <div class="document">
+<p>CAN Transport protocol shall follow ISO 15765-2</p>
+</div>
+
+  </div>
+
+  </section>
+  <section class="requirement_section" data-section='comment'>
+
+    
+    
+    
+  
+    <div class="requirement_meta_multiline_label">VERIFICATION_METHOD:</div>
+    <div class="requirement_meta_multiline"><div class="document">
+<p>System Black box testing for CAN TP</p>
+</div>
+</div>
+
+  </section></article>
+
+</turbo-frame>
+            <turbo-frame id="article-28bffb52f086455cb42ffc93ba7ae3a5"><article class="requirement">
+
+  <section class="requirement_section" data-section='meta'>
+
+    <div data-role='anchor' id="-CAN2-TP"></div>
+
+    <dl class="requirement_meta">
+    
+    <dt><i>UID</i></dt>
+    <dd>CAN2-TP</dd>
+    
+    <dt><i>ASIL</i></dt>
+    <dd>B</dd>
+    
+    <dt><i>CAL</i></dt>
+    <dd>L3</dd>
+    
+    <dt><i>IMPLEMENTATION_TEAM</i></dt>
+    <dd>SW, EE</dd>
+    
+  </dl>
+    
+<ul class="requirement_link">
+  <li>
+    <a data-turbo="false" class="requirement_link-parent" href="../../drive_monitor_ecu/90_configuration/91_releases.html#-RELEASE_1">
+      <span class="requirement_parent-uid">RELEASE_1</span>
+      
+    </a>
+  </li>
+  <li>
+    <a data-turbo="false" class="requirement_link-parent" href="../../drive_monitor_ecu/20_architecture/21_system_architecture.html#2.3-SYSA-INT-APP">
+      <span class="requirement_parent-uid">SYSA-INT-APP</span>
+      APP
+    </a>
+  </li>
+  <li>
+    <a data-turbo="false" class="requirement_link-parent" href="../../drive_monitor_ecu/20_architecture/21_system_architecture.html#2.4-SYSA-INT-BOOTLOADER">
+      <span class="requirement_parent-uid">SYSA-INT-BOOTLOADER</span>
+      BOOTLOADER
+    </a>
+  </li>
+  </ul>
+    
+
+  </section>
+  <section class="requirement_section" data-section='statement'>
+
+    <div class="requirement_statement">
+    <div class="document">
+<p>CAN Transport protocol shall follow ISO 15765-2</p>
+</div>
+
+  </div>
+
+  </section>
+  <section class="requirement_section" data-section='comment'>
+
+    
+    
+    
+  
+    <div class="requirement_meta_multiline_label">VERIFICATION_METHOD:</div>
+    <div class="requirement_meta_multiline"><div class="document">
+<p>System Black box testing for CAN TP</p>
+</div>
+</div>
+
+  </section></article>
+
+</turbo-frame>
+
+      </div>
+</turbo-frame>
+
+    </main>
+
+  </div>
+  
+</body>
+</html>

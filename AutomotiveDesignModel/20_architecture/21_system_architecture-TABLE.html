@@ -1,0 +1,894 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  
+  <meta charset="UTF-8"/>
+
+  <link rel="shortcut icon" href="../../_static/favicon.ico" type="image/x-icon"/>
+
+  
+  <link rel="stylesheet" href="../../_static/_base.css"/>
+  <link rel="stylesheet" href="../../_static/_layout.css"/>
+  <link rel="stylesheet" href="../../_static/_content.css"/>
+  <link rel="stylesheet" href="../../_static/_requirement.css"/>
+  <link rel="stylesheet" href="../../_static/_element.css"/>
+  <link rel="stylesheet" href="../../_static/_form.css"/>
+  
+
+  
+  <script type="text/javascript" src="../../_static/toc.js"></script>
+  
+  
+  
+
+
+  <title>System Architecture - Table</title>
+
+  
+</head>
+
+<body class="table-view withtoc" data-turbo="false">
+<script>document.body.dataset.state = sessionStorage.getItem('tocState') || 'open';</script><div class="layout" id="layout">
+
+    <aside class="layout_aside-header">
+      
+  <a class="index-link" href="../../index.html">To Index</a>
+
+    </aside>
+
+    <aside class="layout_aside">
+      
+  <turbo-frame id="frame-toc">
+    <div>Table of Contents</div>
+    <ul class="toc"><li><a href="#1-Static-Architecture-Diagrams" data-turbo="false">
+              <span class="section-number">1</span>
+              Static Architecture Diagrams
+            </a></li><li><a href="#2-Item-breakdown-features-" data-turbo="false">
+              <span class="section-number">2</span>
+              Item breakdown features 
+            </a><ul><li>
+        <a href="#2.1-SYSA-INT-CAN1" data-turbo="false">
+          <span class="section-number">2.1</span>
+          CAN1 
+        </a></li><li>
+        <a href="#2.2-SYSA-INT-CAN2" data-turbo="false">
+          <span class="section-number">2.2</span>
+          CAN2
+        </a></li><li>
+        <a href="#2.3-SYSA-INT-LIN1" data-turbo="false">
+          <span class="section-number">2.3</span>
+          LIN
+        </a></li><li>
+        <a href="#2.4-SYSA-INT-MCU" data-turbo="false">
+          <span class="section-number">2.4</span>
+          MCU
+        </a></li><li>
+        <a href="#2.5-SYSA-INT-BOX" data-turbo="false">
+          <span class="section-number">2.5</span>
+          Enclosure
+        </a></li></ul>
+            </li><li><a href="#3-MCU-features" data-turbo="false">
+              <span class="section-number">3</span>
+              MCU features
+            </a><ul><li>
+        <a href="#3.1-SYSA-APP-ADAS-SPEED" data-turbo="false">
+          <span class="section-number">3.1</span>
+          ADAS Speed Application
+        </a></li><li>
+        <a href="#3.2-SYSA-INT-APP-CAN1-STACK" data-turbo="false">
+          <span class="section-number">3.2</span>
+          CAN1 Stack
+        </a></li><li>
+        <a href="#3.3-SYSA-INT-APP-CAN2-STACK" data-turbo="false">
+          <span class="section-number">3.3</span>
+          CAN2 Stack
+        </a></li><li>
+        <a href="#3.4-SYSA-INT-APP-UDS-STACK" data-turbo="false">
+          <span class="section-number">3.4</span>
+          UDS Stack
+        </a></li><li>
+        <a href="#3.5-SYSA-INT-APP-LIN-STACK" data-turbo="false">
+          <span class="section-number">3.5</span>
+          LIN Stack
+        </a></li><li>
+        <a href="#3.6-SYSA-SECURE-BOOT" data-turbo="false">
+          <span class="section-number">3.6</span>
+          Bootloader
+        </a></li><li>
+        <a href="#3.7-SYSA-SECURE-UPDATE" data-turbo="false">
+          <span class="section-number">3.7</span>
+          Secure Update
+        </a></li></ul>
+            </li><li><a href="#4-Dynamic-architecture" data-turbo="false">
+              <span class="section-number">4</span>
+              Dynamic architecture
+            </a></li></ul>
+</turbo-frame>
+
+    </aside>
+
+    
+  <a class="layout_toggler layout_button" id="layout_toggle"></a><nav class="layout_nav">
+    <a
+    class="layout_nav-btn layout_button btn-document"
+    title="Go to Document view"
+    href="../../AutomotiveDesignModel/20_architecture/21_system_architecture.html">
+    DOC
+  </a>
+  <a
+    class="layout_nav-btn layout_button btn-table"
+    title="Go to Table view"
+    href="../../AutomotiveDesignModel/20_architecture/21_system_architecture-TABLE.html">
+    TBL
+  </a>
+  <a
+    class="layout_nav-btn layout_button btn-traceability"
+    title="Go to Traceability view"
+    href="../../AutomotiveDesignModel/20_architecture/21_system_architecture-TRACE.html">
+    TR
+  </a>
+  <a
+    class="layout_nav-btn layout_button btn-deep-traceability"
+    title="Go to Deep Traceability view"
+    href="../../AutomotiveDesignModel/20_architecture/21_system_architecture-DEEP-TRACE.html">
+    DTR
+  </a>
+  </nav>
+
+
+    <header class="layout_header">
+      
+  <p>System Architecture <span class="document-view-type">Table</span></p>
+
+    </header>
+
+    <main class="layout_main" id="pan-with-space">
+      
+
+      
+
+      <div class="layout_tmp_inner"><div class="content">
+
+<table class="content-view-table">
+
+  <thead>
+    <tr>
+      <th class="content-view-th">Type</th>
+      <th class="content-view-th">Level</th><th class="content-view-th">UID</th><th class="content-view-th">ASIL</th><th class="content-view-th">CAL</th><th class="content-view-th">REFS</th>
+      <th class="content-view-th">Title</th>
+      <th class="content-view-th">Statement</th>
+      <th class="content-view-th">Rationale</th>
+      <th class="content-view-th">Comment</th></tr>
+  </thead>
+  <tr>
+   <td class="content-view-td content-view-td-type">Section</td>
+   <td class="content-view-td content-view-td-meta">
+     1
+   </td><td class="content-view-td content-view-td-meta"></td><td class="content-view-td content-view-td-meta"></td><td class="content-view-td content-view-td-meta"></td><td class="content-view-td content-view-td-meta"></td>
+    <td class="content-view-td content-view-td-title" colspan="4"><div data-role='anchor' id="1-Static-Architecture-Diagrams"></div>
+      <div class="section-title">
+        Static Architecture Diagrams
+      </div></td>
+  </tr><tr>
+      <td class="content-view-td content-view-td-type">Free text</td>
+      <td class="content-view-td content-view-td-meta">–</td><td class="content-view-td content-view-td-meta"></td><td class="content-view-td content-view-td-meta"></td><td class="content-view-td content-view-td-meta"></td><td class="content-view-td content-view-td-meta"></td>
+      <td class="content-view-td" colspan="50">
+        <div class="document">
+<blockquote>
+<p>Item boundary diagram</p>
+<img alt="PNG demo" class="image" src="_assets/overview.png" />
+<p>MCU Functionality diagram</p>
+<img alt="PNG demo" class="image" src="_assets/overview_mcu.png" />
+</blockquote>
+</div>
+
+      </td>
+    </tr>
+  <tr>
+   <td class="content-view-td content-view-td-type">Section</td>
+   <td class="content-view-td content-view-td-meta">
+     2
+   </td><td class="content-view-td content-view-td-meta"></td><td class="content-view-td content-view-td-meta"></td><td class="content-view-td content-view-td-meta"></td><td class="content-view-td content-view-td-meta"></td>
+    <td class="content-view-td content-view-td-title" colspan="4"><div data-role='anchor' id="2-Item-breakdown-features-"></div>
+      <div class="section-title">
+        Item breakdown features 
+      </div></td>
+  </tr>
+  <tr>
+   <td class="content-view-td content-view-td-type">
+    Requirement</td>
+   <td class="content-view-td content-view-td-meta">
+     2.1
+   </td>
+      <td class="content-view-td content-view-td-meta">
+        SYSA-INT-CAN1</td>
+      <td class="content-view-td content-view-td-meta">
+        QM</td>
+      <td class="content-view-td content-view-td-meta">
+        L3</td><td class="content-view-td content-view-td-meta content-view-td-related">
+      Parents:
+      <ul class="requirement_link">
+        <li>
+          <a class="requirement_link-parent" href="../../AutomotiveDesignModel/90_configuration/90_variants-TABLE.html#-VAR_FULL">
+            <span class="requirement_parent-uid">VAR_FULL</span>
+            
+          </a>
+        </li>
+        <li>
+          <a class="requirement_link-parent" href="../../AutomotiveDesignModel/90_configuration/90_variants-TABLE.html#-VAR_NO_LIN">
+            <span class="requirement_parent-uid">VAR_NO_LIN</span>
+            
+          </a>
+        </li>
+        <li>
+          <a class="requirement_link-parent" href="../../AutomotiveDesignModel/90_configuration/91_releases-TABLE.html#-RELEASE_1">
+            <span class="requirement_parent-uid">RELEASE_1</span>
+            
+          </a>
+        </li>
+        </ul>
+      Children:
+      <ul class="requirement_link">
+        <li>
+          <a class="requirement_link-child" href="../../AutomotiveDesignModel/10_requirements/12_system_requirments-TABLE.html#1.1-SYS-2">
+            <span class="requirement_child-uid">SYS-2</span>
+            CAN1 DIAGNOSTICS
+          </a>
+        </li>
+        <li>
+          <a class="requirement_link-child" href="../../AutomotiveDesignModel/10_requirements/12_system_requirments-TABLE.html#1.2-SYS-3">
+            <span class="requirement_child-uid">SYS-3</span>
+            CAN1 PHYSICAL AND NETWORK
+          </a>
+        </li>
+        <li>
+          <a class="requirement_link-child" href="../../AutomotiveDesignModel/10_requirements/14_electical_requirments-TABLE.html#-EE-EMC-COM1">
+            <span class="requirement_child-uid">EE-EMC-COM1</span>
+            
+          </a>
+        </li>
+        </ul>
+    </td>
+    <td class="content-view-td content-view-td-title"><div data-role='anchor' id="2.1-SYSA-INT-CAN1"></div>
+      <div class="section-title">
+        CAN1 
+      </div></td>
+    <td class="content-view-td content-view-td-content"><div class="document">
+<blockquote>
+CAN1 interface shall be used to communicate with OBD ECU</blockquote>
+</div>
+</td>
+    <td class="content-view-td content-view-td-content"></td>
+    <td class="content-view-td content-view-td-content">
+    </td></tr>
+  <tr>
+   <td class="content-view-td content-view-td-type">
+    Requirement</td>
+   <td class="content-view-td content-view-td-meta">
+     2.2
+   </td>
+      <td class="content-view-td content-view-td-meta">
+        SYSA-INT-CAN2</td>
+      <td class="content-view-td content-view-td-meta">
+        B</td>
+      <td class="content-view-td content-view-td-meta">
+        L3</td><td class="content-view-td content-view-td-meta content-view-td-related">
+      Parents:
+      <ul class="requirement_link">
+        <li>
+          <a class="requirement_link-parent" href="../../AutomotiveDesignModel/90_configuration/90_variants-TABLE.html#-VAR_FULL">
+            <span class="requirement_parent-uid">VAR_FULL</span>
+            
+          </a>
+        </li>
+        <li>
+          <a class="requirement_link-parent" href="../../AutomotiveDesignModel/90_configuration/90_variants-TABLE.html#-VAR_NO_LIN">
+            <span class="requirement_parent-uid">VAR_NO_LIN</span>
+            
+          </a>
+        </li>
+        <li>
+          <a class="requirement_link-parent" href="../../AutomotiveDesignModel/90_configuration/91_releases-TABLE.html#-RELEASE_1">
+            <span class="requirement_parent-uid">RELEASE_1</span>
+            
+          </a>
+        </li>
+        </ul>
+      Children:
+      <ul class="requirement_link">
+        <li>
+          <a class="requirement_link-child" href="../../AutomotiveDesignModel/10_requirements/14_electical_requirments-TABLE.html#-EE-EMC-COM1">
+            <span class="requirement_child-uid">EE-EMC-COM1</span>
+            
+          </a>
+        </li>
+        </ul>
+    </td>
+    <td class="content-view-td content-view-td-title"><div data-role='anchor' id="2.2-SYSA-INT-CAN2"></div>
+      <div class="section-title">
+        CAN2
+      </div></td>
+    <td class="content-view-td content-view-td-content"><div class="document">
+<blockquote>
+CAN2 interface shall be used to communicate with BCM and ADAS</blockquote>
+</div>
+</td>
+    <td class="content-view-td content-view-td-content"></td>
+    <td class="content-view-td content-view-td-content">
+    </td></tr>
+  <tr>
+   <td class="content-view-td content-view-td-type">
+    Requirement</td>
+   <td class="content-view-td content-view-td-meta">
+     2.3
+   </td>
+      <td class="content-view-td content-view-td-meta">
+        SYSA-INT-LIN1</td>
+      <td class="content-view-td content-view-td-meta">
+        B</td>
+      <td class="content-view-td content-view-td-meta">
+        L0</td><td class="content-view-td content-view-td-meta content-view-td-related">
+      Parents:
+      <ul class="requirement_link">
+        <li>
+          <a class="requirement_link-parent" href="../../AutomotiveDesignModel/90_configuration/90_variants-TABLE.html#-VAR_FULL">
+            <span class="requirement_parent-uid">VAR_FULL</span>
+            
+          </a>
+        </li>
+        <li>
+          <a class="requirement_link-parent" href="../../AutomotiveDesignModel/90_configuration/91_releases-TABLE.html#-RELEASE_1">
+            <span class="requirement_parent-uid">RELEASE_1</span>
+            
+          </a>
+        </li>
+        </ul>
+      Children:
+      <ul class="requirement_link">
+        <li>
+          <a class="requirement_link-child" href="../../AutomotiveDesignModel/10_requirements/11_top_requirments-TABLE.html#-LIN21-Wakeup-Sig1">
+            <span class="requirement_child-uid">LIN21-Wakeup-Sig1</span>
+            
+          </a>
+        </li>
+        <li>
+          <a class="requirement_link-child" href="../../AutomotiveDesignModel/10_requirements/11_top_requirments-TABLE.html#-LIN21-Wakeup-Sig2">
+            <span class="requirement_child-uid">LIN21-Wakeup-Sig2</span>
+            
+          </a>
+        </li>
+        <li>
+          <a class="requirement_link-child" href="../../AutomotiveDesignModel/10_requirements/13_software_requirments-TABLE.html#-SW-LIN-DRV-1">
+            <span class="requirement_child-uid">SW-LIN-DRV-1</span>
+            
+          </a>
+        </li>
+        <li>
+          <a class="requirement_link-child" href="../../AutomotiveDesignModel/10_requirements/13_software_requirments-TABLE.html#-SW-LIN-DRV-2">
+            <span class="requirement_child-uid">SW-LIN-DRV-2</span>
+            
+          </a>
+        </li>
+        <li>
+          <a class="requirement_link-child" href="../../AutomotiveDesignModel/10_requirements/13_software_requirments-TABLE.html#-SW-LIN-DRV-3">
+            <span class="requirement_child-uid">SW-LIN-DRV-3</span>
+            
+          </a>
+        </li>
+        <li>
+          <a class="requirement_link-child" href="../../AutomotiveDesignModel/10_requirements/14_electical_requirments-TABLE.html#-EE-LIN21-Wakeup-Sig2">
+            <span class="requirement_child-uid">EE-LIN21-Wakeup-Sig2</span>
+            
+          </a>
+        </li>
+        </ul>
+    </td>
+    <td class="content-view-td content-view-td-title"><div data-role='anchor' id="2.3-SYSA-INT-LIN1"></div>
+      <div class="section-title">
+        LIN
+      </div></td>
+    <td class="content-view-td content-view-td-content"><div class="document">
+<blockquote>
+LIN Interface shall be used to communicate to Horn ECU</blockquote>
+</div>
+</td>
+    <td class="content-view-td content-view-td-content"></td>
+    <td class="content-view-td content-view-td-content">
+    </td></tr>
+  <tr>
+   <td class="content-view-td content-view-td-type">
+    Requirement</td>
+   <td class="content-view-td content-view-td-meta">
+     2.4
+   </td>
+      <td class="content-view-td content-view-td-meta">
+        SYSA-INT-MCU</td>
+      <td class="content-view-td content-view-td-meta">
+        B</td>
+      <td class="content-view-td content-view-td-meta">
+        L3</td><td class="content-view-td content-view-td-meta content-view-td-related">
+      Parents:
+      <ul class="requirement_link">
+        <li>
+          <a class="requirement_link-parent" href="../../AutomotiveDesignModel/90_configuration/90_variants-TABLE.html#-VAR_FULL">
+            <span class="requirement_parent-uid">VAR_FULL</span>
+            
+          </a>
+        </li>
+        <li>
+          <a class="requirement_link-parent" href="../../AutomotiveDesignModel/90_configuration/90_variants-TABLE.html#-VAR_NO_LIN">
+            <span class="requirement_parent-uid">VAR_NO_LIN</span>
+            
+          </a>
+        </li>
+        <li>
+          <a class="requirement_link-parent" href="../../AutomotiveDesignModel/90_configuration/91_releases-TABLE.html#-RELEASE_1">
+            <span class="requirement_parent-uid">RELEASE_1</span>
+            
+          </a>
+        </li>
+        </ul>
+    </td>
+    <td class="content-view-td content-view-td-title"><div data-role='anchor' id="2.4-SYSA-INT-MCU"></div>
+      <div class="section-title">
+        MCU
+      </div></td>
+    <td class="content-view-td content-view-td-content"><div class="document">
+<blockquote>
+Microcontroller of ECU S32k11...</blockquote>
+</div>
+</td>
+    <td class="content-view-td content-view-td-content"></td>
+    <td class="content-view-td content-view-td-content">
+    </td></tr>
+  <tr>
+   <td class="content-view-td content-view-td-type">
+    Requirement</td>
+   <td class="content-view-td content-view-td-meta">
+     2.5
+   </td>
+      <td class="content-view-td content-view-td-meta">
+        SYSA-INT-BOX</td>
+      <td class="content-view-td content-view-td-meta">
+        QM</td>
+      <td class="content-view-td content-view-td-meta">
+        L0</td><td class="content-view-td content-view-td-meta content-view-td-related">
+      Parents:
+      <ul class="requirement_link">
+        <li>
+          <a class="requirement_link-parent" href="../../AutomotiveDesignModel/90_configuration/90_variants-TABLE.html#-VAR_FULL">
+            <span class="requirement_parent-uid">VAR_FULL</span>
+            
+          </a>
+        </li>
+        <li>
+          <a class="requirement_link-parent" href="../../AutomotiveDesignModel/90_configuration/90_variants-TABLE.html#-VAR_NO_LIN">
+            <span class="requirement_parent-uid">VAR_NO_LIN</span>
+            
+          </a>
+        </li>
+        <li>
+          <a class="requirement_link-parent" href="../../AutomotiveDesignModel/90_configuration/91_releases-TABLE.html#-RELEASE_2">
+            <span class="requirement_parent-uid">RELEASE_2</span>
+            
+          </a>
+        </li>
+        </ul>
+    </td>
+    <td class="content-view-td content-view-td-title"><div data-role='anchor' id="2.5-SYSA-INT-BOX"></div>
+      <div class="section-title">
+        Enclosure
+      </div></td>
+    <td class="content-view-td content-view-td-content"><div class="document">
+<blockquote>
+Enclosure and Mechanical connectors of ECU</blockquote>
+</div>
+</td>
+    <td class="content-view-td content-view-td-content"></td>
+    <td class="content-view-td content-view-td-content">
+    </td></tr>
+  <tr>
+   <td class="content-view-td content-view-td-type">Section</td>
+   <td class="content-view-td content-view-td-meta">
+     3
+   </td><td class="content-view-td content-view-td-meta"></td><td class="content-view-td content-view-td-meta"></td><td class="content-view-td content-view-td-meta"></td><td class="content-view-td content-view-td-meta"></td>
+    <td class="content-view-td content-view-td-title" colspan="4"><div data-role='anchor' id="3-MCU-features"></div>
+      <div class="section-title">
+        MCU features
+      </div></td>
+  </tr>
+  <tr>
+   <td class="content-view-td content-view-td-type">
+    Requirement</td>
+   <td class="content-view-td content-view-td-meta">
+     3.1
+   </td>
+      <td class="content-view-td content-view-td-meta">
+        SYSA-APP-ADAS-SPEED</td>
+      <td class="content-view-td content-view-td-meta">
+        B</td>
+      <td class="content-view-td content-view-td-meta">
+        L3</td><td class="content-view-td content-view-td-meta content-view-td-related">
+      Parents:
+      <ul class="requirement_link">
+        <li>
+          <a class="requirement_link-parent" href="../../AutomotiveDesignModel/90_configuration/90_variants-TABLE.html#-VAR_FULL">
+            <span class="requirement_parent-uid">VAR_FULL</span>
+            
+          </a>
+        </li>
+        <li>
+          <a class="requirement_link-parent" href="../../AutomotiveDesignModel/90_configuration/90_variants-TABLE.html#-VAR_NO_LIN">
+            <span class="requirement_parent-uid">VAR_NO_LIN</span>
+            
+          </a>
+        </li>
+        <li>
+          <a class="requirement_link-parent" href="../../AutomotiveDesignModel/90_configuration/91_releases-TABLE.html#-RELEASE_2">
+            <span class="requirement_parent-uid">RELEASE_2</span>
+            
+          </a>
+        </li>
+        </ul>
+      Children:
+      <ul class="requirement_link">
+        <li>
+          <a class="requirement_link-child" href="../../AutomotiveDesignModel/10_requirements/11_top_requirments-TABLE.html#-APP-1">
+            <span class="requirement_child-uid">APP-1</span>
+            
+          </a>
+        </li>
+        <li>
+          <a class="requirement_link-child" href="../../AutomotiveDesignModel/10_requirements/11_top_requirments-TABLE.html#-APP-2">
+            <span class="requirement_child-uid">APP-2</span>
+            
+          </a>
+        </li>
+        </ul>
+    </td>
+    <td class="content-view-td content-view-td-title"><div data-role='anchor' id="3.1-SYSA-APP-ADAS-SPEED"></div>
+      <div class="section-title">
+        ADAS Speed Application
+      </div></td>
+    <td class="content-view-td content-view-td-content"><div class="document">
+<blockquote>
+Application that will monitor CAN ADAS ECU and BCM ECU signals, store ADAS values in NVM and control speed limit of autonomous drive ECU</blockquote>
+</div>
+</td>
+    <td class="content-view-td content-view-td-content"></td>
+    <td class="content-view-td content-view-td-content">
+    </td></tr>
+  <tr>
+   <td class="content-view-td content-view-td-type">
+    Requirement</td>
+   <td class="content-view-td content-view-td-meta">
+     3.2
+   </td>
+      <td class="content-view-td content-view-td-meta">
+        SYSA-INT-APP-CAN1-STACK</td>
+      <td class="content-view-td content-view-td-meta">
+        B</td>
+      <td class="content-view-td content-view-td-meta">
+        L3</td><td class="content-view-td content-view-td-meta content-view-td-related">
+      Parents:
+      <ul class="requirement_link">
+        <li>
+          <a class="requirement_link-parent" href="../../AutomotiveDesignModel/90_configuration/90_variants-TABLE.html#-VAR_FULL">
+            <span class="requirement_parent-uid">VAR_FULL</span>
+            
+          </a>
+        </li>
+        <li>
+          <a class="requirement_link-parent" href="../../AutomotiveDesignModel/90_configuration/90_variants-TABLE.html#-VAR_NO_LIN">
+            <span class="requirement_parent-uid">VAR_NO_LIN</span>
+            
+          </a>
+        </li>
+        <li>
+          <a class="requirement_link-parent" href="../../AutomotiveDesignModel/90_configuration/91_releases-TABLE.html#-RELEASE_1">
+            <span class="requirement_parent-uid">RELEASE_1</span>
+            
+          </a>
+        </li>
+        </ul>
+    </td>
+    <td class="content-view-td content-view-td-title"><div data-role='anchor' id="3.2-SYSA-INT-APP-CAN1-STACK"></div>
+      <div class="section-title">
+        CAN1 Stack
+      </div></td>
+    <td class="content-view-td content-view-td-content"><div class="document">
+<blockquote>
+Communication stack for CAN1 interface, including sending and reception of cyclic messages</blockquote>
+</div>
+</td>
+    <td class="content-view-td content-view-td-content"></td>
+    <td class="content-view-td content-view-td-content">
+    </td></tr>
+  <tr>
+   <td class="content-view-td content-view-td-type">
+    Requirement</td>
+   <td class="content-view-td content-view-td-meta">
+     3.3
+   </td>
+      <td class="content-view-td content-view-td-meta">
+        SYSA-INT-APP-CAN2-STACK</td>
+      <td class="content-view-td content-view-td-meta">
+        B</td>
+      <td class="content-view-td content-view-td-meta">
+        L3</td><td class="content-view-td content-view-td-meta content-view-td-related">
+      Parents:
+      <ul class="requirement_link">
+        <li>
+          <a class="requirement_link-parent" href="../../AutomotiveDesignModel/90_configuration/90_variants-TABLE.html#-VAR_FULL">
+            <span class="requirement_parent-uid">VAR_FULL</span>
+            
+          </a>
+        </li>
+        <li>
+          <a class="requirement_link-parent" href="../../AutomotiveDesignModel/90_configuration/90_variants-TABLE.html#-VAR_NO_LIN">
+            <span class="requirement_parent-uid">VAR_NO_LIN</span>
+            
+          </a>
+        </li>
+        <li>
+          <a class="requirement_link-parent" href="../../AutomotiveDesignModel/90_configuration/91_releases-TABLE.html#-RELEASE_1">
+            <span class="requirement_parent-uid">RELEASE_1</span>
+            
+          </a>
+        </li>
+        </ul>
+    </td>
+    <td class="content-view-td content-view-td-title"><div data-role='anchor' id="3.3-SYSA-INT-APP-CAN2-STACK"></div>
+      <div class="section-title">
+        CAN2 Stack
+      </div></td>
+    <td class="content-view-td content-view-td-content"><div class="document">
+<blockquote>
+Communication stack for CAN2 interface, including sending and reception of cyclic messages</blockquote>
+</div>
+</td>
+    <td class="content-view-td content-view-td-content"></td>
+    <td class="content-view-td content-view-td-content">
+    </td></tr>
+  <tr>
+   <td class="content-view-td content-view-td-type">
+    Requirement</td>
+   <td class="content-view-td content-view-td-meta">
+     3.4
+   </td>
+      <td class="content-view-td content-view-td-meta">
+        SYSA-INT-APP-UDS-STACK</td>
+      <td class="content-view-td content-view-td-meta">
+        QM</td>
+      <td class="content-view-td content-view-td-meta">
+        L3</td><td class="content-view-td content-view-td-meta content-view-td-related">
+      Parents:
+      <ul class="requirement_link">
+        <li>
+          <a class="requirement_link-parent" href="../../AutomotiveDesignModel/90_configuration/90_variants-TABLE.html#-VAR_FULL">
+            <span class="requirement_parent-uid">VAR_FULL</span>
+            
+          </a>
+        </li>
+        <li>
+          <a class="requirement_link-parent" href="../../AutomotiveDesignModel/90_configuration/90_variants-TABLE.html#-VAR_NO_LIN">
+            <span class="requirement_parent-uid">VAR_NO_LIN</span>
+            
+          </a>
+        </li>
+        <li>
+          <a class="requirement_link-parent" href="../../AutomotiveDesignModel/90_configuration/91_releases-TABLE.html#-RELEASE_1">
+            <span class="requirement_parent-uid">RELEASE_1</span>
+            
+          </a>
+        </li>
+        </ul>
+      Children:
+      <ul class="requirement_link">
+        <li>
+          <a class="requirement_link-child" href="../../AutomotiveDesignModel/10_requirements/11_top_requirments-TABLE.html#-CAN1-TP">
+            <span class="requirement_child-uid">CAN1-TP</span>
+            
+          </a>
+        </li>
+        <li>
+          <a class="requirement_link-child" href="../../AutomotiveDesignModel/10_requirements/11_top_requirments-TABLE.html#-CAN2-TP">
+            <span class="requirement_child-uid">CAN2-TP</span>
+            
+          </a>
+        </li>
+        </ul>
+    </td>
+    <td class="content-view-td content-view-td-title"><div data-role='anchor' id="3.4-SYSA-INT-APP-UDS-STACK"></div>
+      <div class="section-title">
+        UDS Stack
+      </div></td>
+    <td class="content-view-td content-view-td-content"><div class="document">
+<blockquote>
+UDS Communication stack for CAN1/CAN2 interface, not including DTCs, application specific Diagnostic Jobs, and programming session</blockquote>
+</div>
+</td>
+    <td class="content-view-td content-view-td-content"></td>
+    <td class="content-view-td content-view-td-content">
+    </td></tr>
+  <tr>
+   <td class="content-view-td content-view-td-type">
+    Requirement</td>
+   <td class="content-view-td content-view-td-meta">
+     3.5
+   </td>
+      <td class="content-view-td content-view-td-meta">
+        SYSA-INT-APP-LIN-STACK</td>
+      <td class="content-view-td content-view-td-meta">
+        B</td>
+      <td class="content-view-td content-view-td-meta">
+        L0</td><td class="content-view-td content-view-td-meta content-view-td-related">
+      Parents:
+      <ul class="requirement_link">
+        <li>
+          <a class="requirement_link-parent" href="../../AutomotiveDesignModel/90_configuration/90_variants-TABLE.html#-VAR_FULL">
+            <span class="requirement_parent-uid">VAR_FULL</span>
+            
+          </a>
+        </li>
+        <li>
+          <a class="requirement_link-parent" href="../../AutomotiveDesignModel/90_configuration/91_releases-TABLE.html#-RELEASE_1">
+            <span class="requirement_parent-uid">RELEASE_1</span>
+            
+          </a>
+        </li>
+        </ul>
+      Children:
+      <ul class="requirement_link">
+        <li>
+          <a class="requirement_link-child" href="../../AutomotiveDesignModel/10_requirements/11_top_requirments-TABLE.html#-LIN21-Wakeup-Sig1">
+            <span class="requirement_child-uid">LIN21-Wakeup-Sig1</span>
+            
+          </a>
+        </li>
+        <li>
+          <a class="requirement_link-child" href="../../AutomotiveDesignModel/10_requirements/11_top_requirments-TABLE.html#-LIN21-Wakeup-Sig2">
+            <span class="requirement_child-uid">LIN21-Wakeup-Sig2</span>
+            
+          </a>
+        </li>
+        </ul>
+    </td>
+    <td class="content-view-td content-view-td-title"><div data-role='anchor' id="3.5-SYSA-INT-APP-LIN-STACK"></div>
+      <div class="section-title">
+        LIN Stack
+      </div></td>
+    <td class="content-view-td content-view-td-content"><div class="document">
+<blockquote>
+Communication stack for LIN1 interface, including sending and reception of cyclic messages</blockquote>
+</div>
+</td>
+    <td class="content-view-td content-view-td-content"></td>
+    <td class="content-view-td content-view-td-content">
+    </td></tr>
+  <tr>
+   <td class="content-view-td content-view-td-type">
+    Requirement</td>
+   <td class="content-view-td content-view-td-meta">
+     3.6
+   </td>
+      <td class="content-view-td content-view-td-meta">
+        SYSA-SECURE-BOOT</td>
+      <td class="content-view-td content-view-td-meta">
+        B</td>
+      <td class="content-view-td content-view-td-meta">
+        L3</td><td class="content-view-td content-view-td-meta content-view-td-related">
+      Parents:
+      <ul class="requirement_link">
+        <li>
+          <a class="requirement_link-parent" href="../../AutomotiveDesignModel/90_configuration/90_variants-TABLE.html#-VAR_FULL">
+            <span class="requirement_parent-uid">VAR_FULL</span>
+            
+          </a>
+        </li>
+        <li>
+          <a class="requirement_link-parent" href="../../AutomotiveDesignModel/90_configuration/91_releases-TABLE.html#-RELEASE_2">
+            <span class="requirement_parent-uid">RELEASE_2</span>
+            
+          </a>
+        </li>
+        <li>
+          <a class="requirement_link-parent" href="../../AutomotiveDesignModel/90_configuration/90_variants-TABLE.html#-VAR_NO_LIN">
+            <span class="requirement_parent-uid">VAR_NO_LIN</span>
+            
+          </a>
+        </li>
+        </ul>
+    </td>
+    <td class="content-view-td content-view-td-title"><div data-role='anchor' id="3.6-SYSA-SECURE-BOOT"></div>
+      <div class="section-title">
+        Bootloader
+      </div></td>
+    <td class="content-view-td content-view-td-content"><div class="document">
+<blockquote>
+MCU Bootloader shall be used for realization of ECU software update, diagnostics and CAN communication stack</blockquote>
+</div>
+</td>
+    <td class="content-view-td content-view-td-content"></td>
+    <td class="content-view-td content-view-td-content">
+    </td></tr>
+  <tr>
+   <td class="content-view-td content-view-td-type">
+    Requirement</td>
+   <td class="content-view-td content-view-td-meta">
+     3.7
+   </td>
+      <td class="content-view-td content-view-td-meta">
+        SYSA-SECURE-UPDATE</td>
+      <td class="content-view-td content-view-td-meta">
+        B</td>
+      <td class="content-view-td content-view-td-meta">
+        L3</td><td class="content-view-td content-view-td-meta content-view-td-related">
+      Parents:
+      <ul class="requirement_link">
+        <li>
+          <a class="requirement_link-parent" href="../../AutomotiveDesignModel/90_configuration/90_variants-TABLE.html#-VAR_FULL">
+            <span class="requirement_parent-uid">VAR_FULL</span>
+            
+          </a>
+        </li>
+        <li>
+          <a class="requirement_link-parent" href="../../AutomotiveDesignModel/90_configuration/91_releases-TABLE.html#-RELEASE_2">
+            <span class="requirement_parent-uid">RELEASE_2</span>
+            
+          </a>
+        </li>
+        <li>
+          <a class="requirement_link-parent" href="../../AutomotiveDesignModel/90_configuration/90_variants-TABLE.html#-VAR_NO_LIN">
+            <span class="requirement_parent-uid">VAR_NO_LIN</span>
+            
+          </a>
+        </li>
+        </ul>
+      Children:
+      <ul class="requirement_link">
+        <li>
+          <a class="requirement_link-child" href="../../AutomotiveDesignModel/10_requirements/11_top_requirments-TABLE.html#-CAN1-TP">
+            <span class="requirement_child-uid">CAN1-TP</span>
+            
+          </a>
+        </li>
+        </ul>
+    </td>
+    <td class="content-view-td content-view-td-title"><div data-role='anchor' id="3.7-SYSA-SECURE-UPDATE"></div>
+      <div class="section-title">
+        Secure Update
+      </div></td>
+    <td class="content-view-td content-view-td-content"><div class="document">
+<blockquote>
+MCU Bootloader shall be used for realization of ECU software update, diagnostics and CAN communication stack</blockquote>
+</div>
+</td>
+    <td class="content-view-td content-view-td-content"></td>
+    <td class="content-view-td content-view-td-content">
+    </td></tr>
+  <tr>
+   <td class="content-view-td content-view-td-type">Section</td>
+   <td class="content-view-td content-view-td-meta">
+     4
+   </td><td class="content-view-td content-view-td-meta"></td><td class="content-view-td content-view-td-meta"></td><td class="content-view-td content-view-td-meta"></td><td class="content-view-td content-view-td-meta"></td>
+    <td class="content-view-td content-view-td-title" colspan="4"><div data-role='anchor' id="4-Dynamic-architecture"></div>
+      <div class="section-title">
+        Dynamic architecture
+      </div></td>
+  </tr>
+
+  </table>
+</div>
+</div>
+
+
+    </main>
+
+  </div>
+  
+</body>
+</html>
