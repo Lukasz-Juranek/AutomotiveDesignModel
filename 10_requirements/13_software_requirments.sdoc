@@ -1,0 +1,77 @@
+[DOCUMENT]
+TITLE: Software Requirements
+OPTIONS:
+  REQUIREMENT_STYLE: Table
+  REQUIREMENT_IN_TOC: True
+
+[GRAMMAR]
+ELEMENTS:
+- TAG: REQUIREMENT
+  FIELDS:
+  - TITLE: UID
+    TYPE: String
+    REQUIRED: True
+  - TITLE: ASIL
+    TYPE: SingleChoice(QM, B)
+    REQUIRED: False
+  - TITLE: CAL
+    TYPE: SingleChoice(L0, L3)
+    REQUIRED: False
+  - TITLE: VERIFICATION_METHOD
+    TYPE: String
+    REQUIRED: False
+  - TITLE: IMPLEMENTATION_TEAM
+    TYPE: MultipleChoice(SW, EE, TEST, ME, QUALITY)
+    REQUIRED: False
+  - TITLE: REFS
+    TYPE: String
+    REQUIRED: False
+  - TITLE: STATEMENT
+    TYPE: String
+    REQUIRED: True
+  - TITLE: COMMENT
+    TYPE: String
+    REQUIRED: False
+
+[SECTION]
+TITLE: LIN DRIVER
+
+[REQUIREMENT]
+UID: SW-LIN-DRV-1
+VERIFICATION_METHOD: Software Integration Tests
+REFS:
+- TYPE: Parent
+  VALUE: SYSA-INT-LIN1
+- TYPE: Parent
+  VALUE: LIN21-Wakeup-Sig2
+- TYPE: Parent
+  VALUE: LIN21-Wakeup-Sig1
+STATEMENT: >>>
+  LIN Driver shall have a API for Time source selection  
+<<<
+
+[REQUIREMENT]
+UID: SW-LIN-DRV-2
+VERIFICATION_METHOD: Code Review
+REFS:
+- TYPE: Parent
+  VALUE: SYSA-INT-LIN1
+STATEMENT: >>>
+  3rd party LIN Stack from  https://github.com/open-LIN/open-LIN-c shall be used.
+<<<
+
+[REQUIREMENT]
+UID: SW-LIN-DRV-3
+VERIFICATION_METHOD: System Qualification Testing 
+REFS:
+- TYPE: Parent
+  VALUE: SYSA-INT-LIN1
+- TYPE: Parent
+  VALUE: LIN21-Wakeup-Sig2
+- TYPE: Parent
+  VALUE: LIN21-Wakeup-Sig1
+STATEMENT: >>>
+  LIN Stack shall be configured as LIN SLAVE, this configuration shall be done in code using defines  
+<<<
+
+[/SECTION]

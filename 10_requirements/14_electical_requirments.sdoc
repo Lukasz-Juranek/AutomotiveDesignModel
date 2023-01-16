@@ -1,0 +1,73 @@
+[DOCUMENT]
+TITLE: Electrical Requirements
+OPTIONS:
+  REQUIREMENT_STYLE: Inline
+
+[GRAMMAR]
+ELEMENTS:
+- TAG: REQUIREMENT
+  FIELDS:
+  - TITLE: UID
+    TYPE: String
+    REQUIRED: True
+  - TITLE: ASIL
+    TYPE: SingleChoice(QM, AB, B)
+    REQUIRED: False
+  - TITLE: CAL
+    TYPE: SingleChoice(L0, L3)
+    REQUIRED: False
+  - TITLE: VERIFICATION_METHOD
+    TYPE: String
+    REQUIRED: False
+  - TITLE: IMPLEMENTATION_TEAM
+    TYPE: MultipleChoice(SW, EE, TEST, ME, QUALITY)
+    REQUIRED: False
+  - TITLE: REFS
+    TYPE: String
+    REQUIRED: False
+  - TITLE: STATEMENT
+    TYPE: String
+    REQUIRED: True
+  - TITLE: COMMENT
+    TYPE: String
+    REQUIRED: False
+
+[SECTION]
+TITLE: Hardware Protection 
+
+[REQUIREMENT]
+UID: EE-EMC-COM1
+ASIL: AB
+VERIFICATION_METHOD: EMC Testing
+IMPLEMENTATION_TEAM: EE
+REFS:
+- TYPE: Parent
+  VALUE: SYSA-INT-CAN1
+- TYPE: Parent
+  VALUE: SYSA-INT-CAN2
+- TYPE: Parent
+  VALUE: EMC-1
+STATEMENT: >>>
+Communication Lines shall have EMC protection for disturbances values as described in ISO 11452-5 
+<<<
+
+[/SECTION]
+
+[SECTION]
+TITLE: Hardware Software Interface
+
+[REQUIREMENT]
+UID: EE-LIN21-Wakeup-Sig2
+VERIFICATION_METHOD: Check MCU registers in running application TIM1 should be configured correctly
+IMPLEMENTATION_TEAM: EE, SW
+REFS:
+- TYPE: Parent
+  VALUE: SYSA-INT-LIN1
+- TYPE: Parent
+  VALUE: LIN21-Wakeup-Sig2
+STATEMENT: >>>
+For measurement of wakeup time TIM1 of MCU shall be used. 
+For clock source and prescaller values see ClockDiagram
+<<<
+
+[/SECTION]

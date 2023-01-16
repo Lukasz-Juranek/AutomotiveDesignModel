@@ -1,0 +1,44 @@
+[DOCUMENT]
+TITLE: Releases
+OPTIONS:
+  REQUIREMENT_STYLE: Table
+  REQUIREMENT_IN_TOC: True
+
+[GRAMMAR]
+ELEMENTS:
+- TAG: RELEASE
+  FIELDS:
+  - TITLE: UID
+    TYPE: String
+    REQUIRED: True
+  - TITLE: REFS
+    TYPE: String
+    REQUIRED: False
+  - TITLE: STATEMENT
+    TYPE: String
+    REQUIRED: True
+  - TITLE: COMMENT
+    TYPE: String
+    REQUIRED: False
+
+[SECTION]
+TITLE: Product Releases
+
+[RELEASE]
+UID: RELEASE_1
+STATEMENT: >>>
+  Initial Release
+  - Electronics not tested on developer board
+  - Only CAN / LIN communication operational
+<<<
+
+[RELEASE]
+UID: RELEASE_2
+STATEMENT: >>>
+  Test car release
+  - Electronics from pre-production 
+  - Bootloader
+  - Application running
+<<<
+
+[/SECTION]

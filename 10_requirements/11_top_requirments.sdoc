@@ -1,0 +1,147 @@
+[DOCUMENT]
+TITLE: Top Requirements
+OPTIONS:
+  REQUIREMENT_STYLE: Inline
+
+[GRAMMAR]
+ELEMENTS:
+- TAG: REQUIREMENT
+  FIELDS:
+  - TITLE: UID
+    TYPE: String
+    REQUIRED: True
+  - TITLE: ASIL
+    TYPE: SingleChoice(QM, B)
+    REQUIRED: False
+  - TITLE: CAL
+    TYPE: SingleChoice(L0, L3)
+    REQUIRED: False
+  - TITLE: VERIFICATION_METHOD
+    TYPE: String
+    REQUIRED: False
+  - TITLE: IMPLEMENTATION_TEAM
+    TYPE: MultipleChoice(SW, EE, TEST, ME, QUALITY)
+    REQUIRED: False
+  - TITLE: REFS
+    TYPE: String
+    REQUIRED: False
+  - TITLE: STATEMENT
+    TYPE: String
+    REQUIRED: True
+  - TITLE: COMMENT
+    TYPE: String
+    REQUIRED: False
+
+[SECTION]
+TITLE: LIN SPECIFICATION 
+
+[REQUIREMENT]
+UID: LIN21-Wakeup-Sig1
+ASIL: B
+CAL: L0
+VERIFICATION_METHOD: System Black box testing, send wake-up signal and observe behavior 
+IMPLEMENTATION_TEAM: SW, EE
+REFS:
+- TYPE: Parent
+  VALUE: SYSA-INT-LIN1
+- TYPE: Parent
+  VALUE: SYSA-INT-APP-LIN-STACK
+STATEMENT: >>>
+
+.. line-block::
+
+  Every slave node (connected to power) shall detect the wake up signal (a dominant
+  pulse longer than 150 µs) and be ready to listen to bus commands within 100 ms,
+  measured from the ending edge of the dominant pulse, see Figure 2.16. A detection
+  threshold of 150 µs combined with a 250 µs pulse generation gives a detection margin
+  that is enough for uncalibrated slave nodes. If the node that transmitted the wake up
+  signal is a slave node, it will be ready to receive or transmit frames immediately. The
+  master node shall also wake up and, when the slave nodes are ready, start transmitting headers to find out the cause (using signals) of the wake up. 
+
+.. image:: _assets/LIN21-Wakeup-Sig1.png
+   :alt: PNG demo
+   :class: image
+
+<<<
+
+[REQUIREMENT]
+UID: LIN21-Wakeup-Sig2
+ASIL: B
+CAL: L0
+VERIFICATION_METHOD: Software Integration testing, LIN Interface should depend on MCU registers (for Timer or Hardware LIN Time measurement) 
+IMPLEMENTATION_TEAM: SW, EE
+REFS:
+- TYPE: Parent
+  VALUE: SYSA-INT-LIN1
+- TYPE: Parent
+  VALUE: SYSA-INT-APP-LIN-STACK
+STATEMENT: >>>
+Time for wake-up signal shall be measured by microcontroller hardware timer 
+<<<
+
+[/SECTION]
+
+[SECTION]
+TITLE: CAN SPECIFICATION
+
+[REQUIREMENT]
+UID: CAN1-TP
+ASIL: B
+CAL: L0
+VERIFICATION_METHOD: System Black box testing for CAN TP 
+IMPLEMENTATION_TEAM: SW, EE
+REFS:
+- TYPE: Parent
+  VALUE: SYSA-INT-APP-UDS-STACK
+- TYPE: Parent
+  VALUE: SYSA-SECURE-UPDATE
+STATEMENT: >>>
+CAN Transport protocol shall follow ISO 15765-2
+<<<
+
+[REQUIREMENT]
+UID: CAN2-TP
+ASIL: B
+CAL: L3
+VERIFICATION_METHOD: System Black box testing for CAN TP 
+IMPLEMENTATION_TEAM: SW, EE
+REFS:
+- TYPE: Parent
+  VALUE: SYSA-INT-APP-UDS-STACK
+STATEMENT: >>>
+CAN Transport protocol shall follow ISO 15765-2
+<<<
+
+[/SECTION]
+
+[SECTION]
+TITLE: APP SPECIFICATION
+
+[REQUIREMENT]
+UID: APP-1
+ASIL: B
+CAL: L3
+VERIFICATION_METHOD: Grey box testing send CAN signal check if NVM is stored in NVM with diagnostic test RDBI
+IMPLEMENTATION_TEAM: SW
+REFS:
+- TYPE: Parent
+  VALUE: SYSA-APP-ADAS-SPEED
+STATEMENT: >>>
+ADAS_SPEED CAN signal shall be monitored by ECU and shall be stored in ECU NVM.
+ECU Shall store 10 000 last samples and then override oldest one.
+<<<
+
+[REQUIREMENT]
+UID: APP-2
+ASIL: B
+CAL: L3
+VERIFICATION_METHOD: Black box testing input ADAS_SPEED and see if resulting ADAS_SPEED_OK is ok 
+IMPLEMENTATION_TEAM: SW
+REFS:
+- TYPE: Parent
+  VALUE: SYSA-APP-ADAS-SPEED
+STATEMENT: >>>
+ADAS_SPEED_OK CAN signal shall be set by ECU based on ADAS_SPEED according to formula ....
+<<<
+
+[/SECTION]

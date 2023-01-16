@@ -1,0 +1,66 @@
+[DOCUMENT]
+TITLE: System Requirements
+OPTIONS:
+  REQUIREMENT_STYLE: Inline
+
+[GRAMMAR]
+ELEMENTS:
+- TAG: REQUIREMENT
+  FIELDS:
+  - TITLE: UID
+    TYPE: String
+    REQUIRED: False
+  - TITLE: ASIL
+    TYPE: String
+    REQUIRED: False
+  - TITLE: CAL
+    TYPE: String
+    REQUIRED: False
+  - TITLE: RELEASE
+    TYPE: String
+    REQUIRED: False
+  - TITLE: REFS
+    TYPE: String
+    REQUIRED: False
+  - TITLE: TITLE
+    TYPE: String
+    REQUIRED: True
+  - TITLE: STATEMENT
+    TYPE: String
+    REQUIRED: True
+  - TITLE: COMMENT
+    TYPE: String
+    REQUIRED: False
+
+[SECTION]
+TITLE: CAN1
+
+[REQUIREMENT]
+UID: SYS-2
+ASIL: QM
+CAL: L3
+REFS:
+- TYPE: File
+  VALUE: /10_requirements/19_inpsut_docs/CAN1.odx
+- TYPE: Parent
+  VALUE: SYSA-INT-CAN1
+TITLE: CAN1 DIAGNOSTICS
+STATEMENT: >>>
+  CAN1 UDS diagnostic signals shall be realized as defined by CAN1.odx
+<<<
+
+[REQUIREMENT]
+UID: SYS-3
+ASIL: QM
+CAL: L3
+REFS:
+- TYPE: File
+  VALUE: /10_requirements/19_inpsut_docs/CAN1.dbc
+- TYPE: Parent
+  VALUE: SYSA-INT-CAN1
+TITLE: CAN1 PHYSICAL AND NETWORK
+STATEMENT: >>>
+  CAN1 interface physical parameters and signals shall be realized as defined by CAN1.dbc
+<<<
+
+[/SECTION]

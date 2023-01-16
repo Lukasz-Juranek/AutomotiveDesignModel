@@ -1,0 +1,26 @@
+[DOCUMENT]
+TITLE: Software Plan
+OPTIONS:
+  REQUIREMENT_STYLE: Table
+  REQUIREMENT_IN_TOC: True
+
+[FREETEXT]
+This document described what (process ) and how (methods) system engineering is done in project
+Process is based on https://www.automotivespice.com/fileadmin/software-download/Automotive_SPICE_PAM_30.pdf
+[/FREETEXT]
+
+[SECTION]
+TITLE: Software Process description
+
+[REQUIREMENT]
+UID: PLAN-SW1
+TITLE: SW1 - Software REQUIREMENT Analysis 
+STATEMENT: requirement 
+COMMENT: >>>
+Activities and methods here described 
+<<<
+COMMENT: >>>
+After reading this you should know what and how to do this job
+<<<
+
+[/SECTION]

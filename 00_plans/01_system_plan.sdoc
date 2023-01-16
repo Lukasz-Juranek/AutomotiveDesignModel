@@ -1,0 +1,45 @@
+[DOCUMENT]
+TITLE: System Plan
+OPTIONS:
+  REQUIREMENT_STYLE: Table
+  REQUIREMENT_IN_TOC: True
+
+[FREETEXT]
+This document described what (process ) and how (methods) system engineering is done in project
+Process is based on https://www.automotivespice.com/fileadmin/software-download/Automotive_SPICE_PAM_30.pdf
+[/FREETEXT]
+
+[SECTION]
+TITLE: Configuration Management
+
+[REQUIREMENT]
+UID: PLAN-CM0
+TITLE: Implementation Traceability 
+STATEMENT: >>>
+.. image:: _assets/process_tracebility.png
+  :alt: PNG demo
+  :class: image
+<<<
+
+[REQUIREMENT]
+UID: PLAN-CM1
+TITLE: Requirement fields default values and inheritance  
+STATEMENT: If not specified in requirement ASIL, CAL Level, Release, Variants are Inherited from system/software/electrical architecture linked to element  
+
+[/SECTION]
+
+[SECTION]
+TITLE: System Process description
+
+[REQUIREMENT]
+UID: PLAN-SYS1
+TITLE: SYS1 - REQUIREMENT ELICITATION 
+STATEMENT: requirement 
+COMMENT: >>>
+Activities and methods here described 
+<<<
+COMMENT: >>>
+After reading this you should know what and how to do this job
+<<<
+
+[/SECTION]

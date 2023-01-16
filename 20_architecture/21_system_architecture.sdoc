@@ -1,0 +1,253 @@
+[DOCUMENT]
+TITLE: System Architecture
+OPTIONS:
+  REQUIREMENT_STYLE: Inline
+  REQUIREMENT_IN_TOC: True
+
+[GRAMMAR]
+ELEMENTS:
+- TAG: FEATURE
+  FIELDS:
+  - TITLE: UID
+    TYPE: String
+    REQUIRED: True
+  - TITLE: ASIL
+    TYPE: SingleChoice(QM, B)
+    REQUIRED: True
+  - TITLE: CAL
+    TYPE: SingleChoice(L0, L3)
+    REQUIRED: False
+  - TITLE: REFS
+    TYPE: Reference(ParentReqReference, FileReference)
+    REQUIRED: False
+  - TITLE: TITLE
+    TYPE: String
+    REQUIRED: False
+  - TITLE: STATEMENT
+    TYPE: String
+    REQUIRED: True
+  - TITLE: COMMENT
+    TYPE: String
+    REQUIRED: False
+
+[SECTION]
+TITLE: Static Architecture Diagrams
+
+[FREETEXT]
+  Item boundary diagram
+
+  .. image:: _assets/overview.png
+    :alt: PNG demo
+    :class: image
+  
+  MCU Functionality diagram
+
+  .. image:: _assets/overview_mcu.png
+    :alt: PNG demo
+    :class: image
+[/FREETEXT]
+
+[/SECTION]
+
+[SECTION]
+TITLE: Item breakdown features 
+
+[FEATURE]
+UID: SYSA-INT-CAN1
+ASIL: QM
+CAL: L3
+REFS:
+- TYPE: Parent
+  VALUE: VAR_FULL
+- TYPE: Parent
+  VALUE: VAR_NO_LIN
+- TYPE: Parent
+  VALUE: RELEASE_1
+TITLE: CAN1 
+STATEMENT: >>>
+  CAN1 interface shall be used to communicate with OBD ECU
+<<<
+
+[FEATURE]
+UID: SYSA-INT-CAN2
+ASIL: B
+CAL: L3
+REFS:
+- TYPE: Parent
+  VALUE: VAR_FULL
+- TYPE: Parent
+  VALUE: VAR_NO_LIN
+- TYPE: Parent
+  VALUE: RELEASE_1
+TITLE: CAN2
+STATEMENT: >>>
+  CAN2 interface shall be used to communicate with BCM and ADAS
+<<<
+
+[FEATURE]
+UID: SYSA-INT-LIN1
+ASIL: B
+CAL: L0
+REFS:
+- TYPE: Parent
+  VALUE: VAR_FULL
+- TYPE: Parent
+  VALUE: RELEASE_1
+TITLE: LIN
+STATEMENT: >>>
+  LIN Interface shall be used to communicate to Horn ECU 
+<<<
+
+[FEATURE]
+UID: SYSA-INT-MCU
+ASIL: B
+CAL: L3
+REFS:
+- TYPE: Parent
+  VALUE: VAR_FULL
+- TYPE: Parent
+  VALUE: VAR_NO_LIN
+- TYPE: Parent
+  VALUE: RELEASE_1
+TITLE: MCU
+STATEMENT: >>>
+  Microcontroller of ECU S32k11...
+<<<
+
+[FEATURE]
+UID: SYSA-INT-BOX
+ASIL: QM
+CAL: L0
+REFS:
+- TYPE: Parent
+  VALUE: VAR_FULL
+- TYPE: Parent
+  VALUE: VAR_NO_LIN
+- TYPE: Parent
+  VALUE: RELEASE_2
+TITLE: Enclosure
+STATEMENT: >>>
+  Enclosure and Mechanical connectors of ECU
+<<<
+
+[/SECTION]
+
+[SECTION]
+TITLE: MCU features
+
+[FEATURE]
+UID: SYSA-APP-ADAS-SPEED
+ASIL: B
+CAL: L3
+REFS:
+- TYPE: Parent
+  VALUE: VAR_FULL
+- TYPE: Parent
+  VALUE: VAR_NO_LIN
+- TYPE: Parent
+  VALUE: RELEASE_2
+TITLE: ADAS Speed Application
+STATEMENT: >>>
+  Application that will monitor CAN ADAS ECU and BCM ECU signals, store ADAS values in NVM and control speed limit of autonomous drive ECU  
+<<<
+
+[FEATURE]
+UID: SYSA-INT-APP-CAN1-STACK
+ASIL: B
+CAL: L3
+REFS:
+- TYPE: Parent
+  VALUE: VAR_FULL
+- TYPE: Parent
+  VALUE: VAR_NO_LIN
+- TYPE: Parent
+  VALUE: RELEASE_1
+TITLE: CAN1 Stack
+STATEMENT: >>>
+  Communication stack for CAN1 interface, including sending and reception of cyclic messages 
+<<<
+
+[FEATURE]
+UID: SYSA-INT-APP-CAN2-STACK
+ASIL: B
+CAL: L3
+REFS:
+- TYPE: Parent
+  VALUE: VAR_FULL
+- TYPE: Parent
+  VALUE: VAR_NO_LIN
+- TYPE: Parent
+  VALUE: RELEASE_1
+TITLE: CAN2 Stack
+STATEMENT: >>>
+  Communication stack for CAN2 interface, including sending and reception of cyclic messages 
+<<<
+
+[FEATURE]
+UID: SYSA-INT-APP-UDS-STACK
+ASIL: QM
+CAL: L3
+REFS:
+- TYPE: Parent
+  VALUE: VAR_FULL
+- TYPE: Parent
+  VALUE: VAR_NO_LIN
+- TYPE: Parent
+  VALUE: RELEASE_1
+TITLE: UDS Stack
+STATEMENT: >>>
+  UDS Communication stack for CAN1/CAN2 interface, not including DTCs, application specific Diagnostic Jobs, and programming session  
+<<<
+
+[FEATURE]
+UID: SYSA-INT-APP-LIN-STACK
+ASIL: B
+CAL: L0
+REFS:
+- TYPE: Parent
+  VALUE: VAR_FULL
+- TYPE: Parent
+  VALUE: RELEASE_1
+TITLE: LIN Stack
+STATEMENT: >>>
+  Communication stack for LIN1 interface, including sending and reception of cyclic messages 
+<<<
+
+[FEATURE]
+UID: SYSA-SECURE-BOOT
+ASIL: B
+CAL: L3
+REFS:
+- TYPE: Parent
+  VALUE: VAR_FULL
+- TYPE: Parent
+  VALUE: RELEASE_2
+- TYPE: Parent
+  VALUE: VAR_NO_LIN
+TITLE: Bootloader
+STATEMENT: >>>
+  MCU Bootloader shall be used for realization of ECU software update, diagnostics and CAN communication stack    
+<<<
+
+[FEATURE]
+UID: SYSA-SECURE-UPDATE
+ASIL: B
+CAL: L3
+REFS:
+- TYPE: Parent
+  VALUE: VAR_FULL
+- TYPE: Parent
+  VALUE: RELEASE_2
+- TYPE: Parent
+  VALUE: VAR_NO_LIN
+TITLE: Secure Update
+STATEMENT: >>>
+  MCU Bootloader shall be used for realization of ECU software update, diagnostics and CAN communication stack    
+<<<
+
+[/SECTION]
+
+[SECTION]
+TITLE: Dynamic architecture
+
+[/SECTION]

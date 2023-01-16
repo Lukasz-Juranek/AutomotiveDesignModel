@@ -1,0 +1,39 @@
+[DOCUMENT]
+TITLE: Variants
+OPTIONS:
+  REQUIREMENT_STYLE: Table
+  REQUIREMENT_IN_TOC: True
+
+[GRAMMAR]
+ELEMENTS:
+- TAG: VARIANT
+  FIELDS:
+  - TITLE: UID
+    TYPE: String
+    REQUIRED: True
+  - TITLE: REFS
+    TYPE: String
+    REQUIRED: False
+  - TITLE: STATEMENT
+    TYPE: String
+    REQUIRED: True
+  - TITLE: COMMENT
+    TYPE: String
+    REQUIRED: False
+
+[SECTION]
+TITLE: Product Releases
+
+[VARIANT]
+UID: VAR_NO_LIN
+STATEMENT: >>>
+  Variant with no lin communication, no LIN Transceiver is embedded LIN Connector PINs tied to GND.   
+<<<
+
+[VARIANT]
+UID: VAR_FULL
+STATEMENT: >>>
+  Full Variant with both CANs and LIN 
+<<<
+
+[/SECTION]

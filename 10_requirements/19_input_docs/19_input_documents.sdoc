@@ -1,0 +1,48 @@
+[DOCUMENT]
+TITLE: Input Documentations
+OPTIONS:
+  REQUIREMENT_STYLE: Inline
+
+[GRAMMAR]
+ELEMENTS:
+- TAG: REQUIREMENT
+  FIELDS:
+  - TITLE: UID
+    TYPE: String
+    REQUIRED: False
+  - TITLE: DOC_REVISION
+    TYPE: String
+    REQUIRED: False
+  - TITLE: REFS
+    TYPE: String
+    REQUIRED: False
+  - TITLE: TITLE
+    TYPE: String
+    REQUIRED: True
+  - TITLE: STATEMENT
+    TYPE: String
+    REQUIRED: True
+  - TITLE: COMMENT
+    TYPE: String
+    REQUIRED: False
+
+[SECTION]
+TITLE: High-level requirements
+
+[REQUIREMENT]
+UID: INPUT-LIN-2-1
+DOC_REVISION: 2.1
+TITLE: LIN-2-1
+STATEMENT: >>>
+LIN Specification from https://lin-cia.org/fileadmin/microsites/lin-cia.org/resources/documents/LIN-Spec_Pac2_1.pdf
+<<<
+
+[REQUIREMENT]
+UID: CAN1-DBC-1
+DOC_REVISION: 1.001
+TITLE: CAN1.dbc
+STATEMENT: >>>
+Dbc file for CAN1 interface from 10_requirements\\19_input_docs\\CAN1.dbc
+<<<
+
+[/SECTION]
